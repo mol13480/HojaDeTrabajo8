@@ -1,3 +1,10 @@
+/*
+Universidad del Valle de Guatemala
+Hoja de Trabajo 8 
+Irene Molina 13480
+Jorge Garcia 13175
+Moises Urias 13015
+ */
 package hojadetrabajo8;
 /*
 UVG
@@ -20,14 +27,21 @@ class WordSetFactory {
 	{
 	    if (tipo == 1)
 		    return new SimpleSet();
-		else
+	
+            if(tipo==5){
+                return new TreeMapImp();
+            }
+            if(tipo==4){
+                return new HashMapImp();
+            }
+            else
 		    // aqui se regresara el set empleando sus implementaciones:
 			// if tipo == 2 cree una instancia para un Wordset implementao con Red Black Tree
 			// if tipo == 3 cree una instancia para un Wordset implementado con Splay Tree
 			// if tipo == 4 cree una instancia para un Wordset implementado con Hash table
 			// if tipo == 5 cree una instancia para un Wordset implementado con TreeMap
 			
-			return new null; // modificarlo para que regrese la implementacion seleccionada
+			return null; // modificarlo para que regrese la implementacion seleccionada
 	}
 	
 	
