@@ -35,7 +35,7 @@ class WordSetFactory {
             if(tipo==4){
                 return new HashMapImp();
             }
-             if(tipo==5){
+             if(tipo==2){
                 return new SplayTree();
             }
             else
