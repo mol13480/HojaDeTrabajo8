@@ -15,6 +15,7 @@ Autor: Eduardo Castellanos
 Descripción: WordSetFactory. Clase  utilizada para instanciar los diferentes tipos de sets. 
 */
 class WordSetFactory {
+    
 	
 	// Metodo que genera un objeto que implementa WordSet
 	// parametro tipo: 1 = SimpleSet
@@ -33,6 +34,9 @@ class WordSetFactory {
             }
             if(tipo==4){
                 return new HashMapImp();
+            }
+             if(tipo==5){
+                return new SplayTree();
             }
             else
 		    // aqui se regresara el set empleando sus implementaciones:

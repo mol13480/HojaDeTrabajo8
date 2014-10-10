@@ -15,9 +15,12 @@ import java.util.TreeMap;
 
 public class TreeMapImp implements WordSet{
     TreeMap tree=new TreeMap();
+  
+    
     
     public void add(Word W){
         tree.put(W,W);
+        
     }
     public Word get(Word W){
         if(tree.containsKey(W))
