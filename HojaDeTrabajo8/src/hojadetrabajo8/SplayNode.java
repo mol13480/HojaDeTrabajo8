@@ -9,11 +9,13 @@ package hojadetrabajo8;
  *
  * @author Jorge
  */
+
+/// clase nodo para el splayNode
 public class SplayNode  {
        
-
+    // nodos aledaños
      SplayNode left, right, parent;
-
+     //valor
      Word element;
 
  
@@ -38,7 +40,7 @@ public class SplayNode  {
 
      } 
 
-     /** Constructor **/
+     /** Constructor con etradas completas **/
 
      public SplayNode(Word ele, SplayNode left, SplayNode right, SplayNode parent)
 

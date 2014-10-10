@@ -1,14 +1,20 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ /*
+Universidad del Valle de Guatemala
+Hoja de Trabajo 8 
+Irene Molina 13480
+Jorge Garcia 13175
+Moises Urias 13015
+
  */
 package hojadetrabajo8;
 
 /**
  *
- * @author Jorge
+ * @authors http://www.sanfoundry.com/java-program-implement-splay-tree/
+ * modificado por :Jorge García,Moises Urias,Irene Molina
  */
+
 public class SplayTree implements WordSet {
          private SplayNode root;
 
@@ -28,7 +34,7 @@ public class SplayTree implements WordSet {
 
  
 
-     /** Function to check if tree is empty **/
+     /** Function para revisar si el arbol esta vacio **/
 
      public boolean isEmpty()
 
@@ -52,7 +58,7 @@ public class SplayTree implements WordSet {
 
  
 
-     /** function to insert element */
+     /** funcion para agregar elementos */
 
      public void add(Word ele)
 
@@ -102,7 +108,7 @@ public class SplayTree implements WordSet {
 
      }
 
-     /** rotate **/
+     /** rotacion 1 **/
 
      public void makeLeftChildParent(SplayNode c, SplayNode p)
 
@@ -146,7 +152,7 @@ public class SplayTree implements WordSet {
 
  
 
-     /** rotate **/
+     /** rotacion 2 **/
 
      public void makeRightChildParent(SplayNode c, SplayNode p)
 
@@ -186,7 +192,7 @@ public class SplayTree implements WordSet {
 
  
 
-     /** function splay **/
+     /** funcion de Splay deside cuando usar las rotaciones **/
 
      private void Splay(SplayNode x)
 
@@ -278,241 +284,7 @@ public class SplayTree implements WordSet {
 
      }
 
- 
-
-     /** function to remove element **/
-
-     public void remove(Word ele)
-
-     {
-
-         SplayNode node = findNode(ele);
-
-        remove(node);
-
-     }
-
- 
-
-     /** function to remove node **/
-
-     private void remove(SplayNode node)
-
-     {
-
-         if (node == null)
-
-             return;
-
- 
-
-         Splay(node);
-
-         if( (node.left != null) && (node.right !=null))
-
-         { 
-
-             SplayNode min = node.left;
-
-             while(min.right!=null)
-
-                 min = min.right;
-
- 
-
-             min.right = node.right;
-
-             node.right.parent = min;
-
-             node.left.parent = null;
-
-             root = node.left;
-
-         }
-
-         else if (node.right != null)
-
-         {
-
-             node.right.parent = null;
-
-             root = node.right;
-
-         } 
-
-         else if( node.left !=null)
-
-         {
-
-             node.left.parent = null;
-
-             root = node.left;
-
-         }
-
-         else
-
-         {
-
-             root = null;
-
-         }
-
-         node.parent = null;
-
-         node.left = null;
-
-         node.right = null;
-
-         node = null;
-
-         count--;
-
-     }
-
- 
-
-     /** Functions to count number of nodes **/
-
-     public int countNodes()
-
-     {
-
-         return count;
-
-     }
-
- 
-
-     /** Functions to search for an element **/
-
-     public boolean search(Word val)
-
-     {
-
-         return findNode(val) != null;
-
-     }
-
-     private SplayNode findNode(Word ele)
-
-     {
-
-         SplayNode z = root;
-
-         while (z != null)
-
-         {
-
-             if (z.element.compareTo(ele)>0)
-
-                 z = z.right;
-
-             else if (z.element.compareTo(ele)<0)
-
-                 z = z.left;
-
-             else
-
-                 return z;
-
-         }
-
-         return null;
-
-     }
-
- 
-
-     /** Function for inorder traversal **/ 
-
-     public void inorder()
-
-     {
-
-         inorder(root);
-
-     }
-
-     private void inorder(SplayNode r)
-
-     {
-
-         if (r != null)
-
-         {
-
-             inorder(r.left);
-
-             System.out.print(r.element +" ");
-
-             inorder(r.right);
-
-         }
-
-     }
-
- 
-
-     /** Function for preorder traversal **/
-
-     public void preorder()
-
-     {
-
-         preorder(root);
-
-     }
-
-     private void preorder(SplayNode r)
-
-     {
-
-         if (r != null)
-
-         {
-
-             System.out.print(r.element +" ");
-
-             preorder(r.left);             
-
-             preorder(r.right);
-
-         }
-
-     }
-
- 
-
-     /** Function for postorder traversal **/
-
-     public void postorder()
-
-     {
-
-         postorder(root);
-
-     }
-
-     private void postorder(SplayNode r)
-
-     {
-
-         if (r != null)
-
-         {
-
-             postorder(r.left);             
-
-             postorder(r.right);
-
-             System.out.print(r.element +" ");
-
-         }
-
-     }
-     
-   
+     // metodo para llegar al elemento tipo Word
     public Word get(Word ele)
 
      {
