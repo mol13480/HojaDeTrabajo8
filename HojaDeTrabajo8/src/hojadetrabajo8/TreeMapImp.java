@@ -19,10 +19,12 @@ public class TreeMapImp implements WordSet{
     
     
     public void add(Word W){
+        //se agrega la palabra como key y value
         tree.put(W,W);
         
     }
     public Word get(Word W){
+        //si se encuentra la palabra, se hace el get
         if(tree.containsKey(W))
         return (Word)tree.get(W);
         else return null;

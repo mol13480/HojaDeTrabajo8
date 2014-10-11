@@ -38,14 +38,18 @@ class WordSetFactory {
              if(tipo==2){
                 return new SplayTree();
             }
+            if(tipo==3){
+                return new RBT();
+            }
             else
 		    // aqui se regresara el set empleando sus implementaciones:
 			// if tipo == 2 cree una instancia para un Wordset implementao con Red Black Tree
 			// if tipo == 3 cree una instancia para un Wordset implementado con Splay Tree
 			// if tipo == 4 cree una instancia para un Wordset implementado con Hash table
 			// if tipo == 5 cree una instancia para un Wordset implementado con TreeMap
-			
-			return new RBT(); // modificarlo para que regrese la implementacion seleccionada
+			 
+			System.out.println("Ingrese una implementacion adecuada");
+                        return null; 
 	}
 	
 	
