@@ -45,7 +45,7 @@ class WordSetFactory {
 			// if tipo == 4 cree una instancia para un Wordset implementado con Hash table
 			// if tipo == 5 cree una instancia para un Wordset implementado con TreeMap
 			
-			return null; // modificarlo para que regrese la implementacion seleccionada
+			return new RBT(); // modificarlo para que regrese la implementacion seleccionada
 	}
 	
 	
